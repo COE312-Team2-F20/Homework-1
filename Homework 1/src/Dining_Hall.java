@@ -1,7 +1,7 @@
 
 import java.util.Random;
 import java.util.Scanner;
-class MyException_d extends Exception{
+/*class MyException_d extends Exception{
 	String str1;
 	MyException_d(String str2) {
 		str1=str2;
@@ -9,8 +9,10 @@ class MyException_d extends Exception{
    public String toString(){ 
 	return ("That is not a valid command!") ;
    }
-}
-public class Dining_Hall extends Location implements Behaviour, Character{
+}*/
+public class Dining_Hall extends Location implements Behaviour, Character {
+	//default constructor
+	public Dining_Hall()
 	{super.room = "Dining Hall";}
 	Scanner input = new Scanner(System.in);
 	//Location functions
@@ -40,16 +42,11 @@ public class Dining_Hall extends Location implements Behaviour, Character{
 		else
 			System.out.println("This person is not here!");
 	}
-	public String next_a() {
-		System.out.println("What would you like to do next?");
-		String next = input.nextLine();
-		return next;
-	}
 	
 	public void activity(String test) {
 		test = test.toLowerCase();
 	while(test != null) {
-		try {
+		//try {
 		if(test.contains("walk") || test.contains("leave")) {
 			walk();
 			break;
@@ -62,11 +59,7 @@ public class Dining_Hall extends Location implements Behaviour, Character{
 			talk(test);
 			test = next_a();
 			}
-		else if(test.contains("use")) {
-			hold(test);
-			test = next_a(); 
-			}
-		else if(test.contains("eat")) {
+		else if(test.contains("hold") || test.contains("use")) {
 			hold(test);
 			test = next_a();
 			}
@@ -74,11 +67,13 @@ public class Dining_Hall extends Location implements Behaviour, Character{
 			end();
 		}
 		else
-			throw new MyException_d("That is not a valid command");
-		}catch(MyException_d exp){
-			System.out.println(exp) ;
-			test = next_a();				
-			}		
+			{System.out.println("That is not a valid command");
+			test = next_a();}
+			//throw new MyException_d("That is not a valid command");
+		//}catch(MyException_d exp){
+		//	System.out.println(exp) ;
+		//	test = next_a();				
+			//}		
 	}
 	}
 }

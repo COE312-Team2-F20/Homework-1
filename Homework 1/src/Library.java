@@ -2,7 +2,7 @@
 
 import java.util.Random;
 import java.util.Scanner;
-//an exception class for invalid commands
+/*
 class MyException_L extends Exception{
 		String str1;
 		MyException_L(String str2) {
@@ -12,7 +12,9 @@ class MyException_L extends Exception{
 		return ("That is not a valid command!") ;
 	   }
 	}
+	*/
 public class Library extends Location implements Behaviour, Character{
+	public Library()
 	{super.room = "Library";}
 	Scanner input = new Scanner(System.in);
 	//Location functions
@@ -40,18 +42,11 @@ public class Library extends Location implements Behaviour, Character{
 		else
 			System.out.println("This person is not here!");
 	}
-	//function that asks the player for the next input
-	public String next_a() {
-		System.out.println("What would you like to do next?");
-		String next = input.nextLine();
-		next = next.toLowerCase();
-		return next;
-	}
 	
 	public void activity(String test) {
 		test = test.toLowerCase();
 	while(test != null) {
-		try {
+		//try {
 		if(test.contains("walk") || test.contains("leave")) {
 			walk();
 			break;
@@ -76,11 +71,15 @@ public class Library extends Location implements Behaviour, Character{
 			end();
 		}
 		else
-			throw new MyException_L("That is not a valid command");
+		{
+			System.out.println("That is not a valid command");
+			test = next_a();
+		}
+			/*throw new MyException_L("That is not a valid command");
 		}catch(MyException_L exp){
 			System.out.println(exp) ;
 			test = next_a();				
-			}
+			}*/
 	}
 }
 }

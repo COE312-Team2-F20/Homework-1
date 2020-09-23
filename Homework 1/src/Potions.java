@@ -1,8 +1,6 @@
-
-
 import java.util.Random;
 import java.util.Scanner;
-class MyException_P extends Exception{
+/*class MyException_P extends Exception{
 		String str1;
 		MyException_P(String str2) {
 			str1=str2;
@@ -11,7 +9,9 @@ class MyException_P extends Exception{
 		return ("That is not a valid command!") ;
 	   }
 	}
+	*/
 public class Potions extends Location implements Behaviour, Character{
+	public Potions()
 	{super.room = "Potions Classroom";}
 	Scanner input = new Scanner(System.in);
 	//Location functions
@@ -42,17 +42,12 @@ public class Potions extends Location implements Behaviour, Character{
 		else
 			System.out.println("This person is not here!");
 	}
-	public String next_a() {
-		System.out.println("What would you like to do next?");
-		String next = input.nextLine();
-		next = next.toLowerCase();
-		return next;
-	}
 	
 	public void activity(String test) {
+	
 		test = test.toLowerCase();
 	while(test != null) {
-		try {
+		//try {
 		if(test.contains("walk") || test.contains("leave")) {
 			walk();
 			break;
@@ -77,11 +72,15 @@ public class Potions extends Location implements Behaviour, Character{
 			end();
 		}
 		else
-			throw new MyException_P("That is not a valid command");
+		{
+			System.out.println("That is not a valid command");
+			test = next_a();
+		}
+		}
+		/*	throw new MyException_P("That is not a valid command");
 		}catch(MyException_P exp){
 			System.out.println(exp) ;
 			test = next_a();				
-			}
+			}*/
 	}
-}
 }
