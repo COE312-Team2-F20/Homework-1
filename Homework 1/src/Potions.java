@@ -26,7 +26,7 @@ public class Potions extends Location implements Behaviour, Character{
         String potion = list[randomNumber];
 		if(a.contains("cauldron"))
 		 {
-	        System.out.println("You stir the ingredients in the caldron together and create " + potion); 
+	        System.out.println("You stir the ingredients in the caldron together and create " + potion + " potion."); 
 		}
 		else if (a.contains("potion"))
 		{		System.out.println("You take a sip of the " + potion + " potion");}

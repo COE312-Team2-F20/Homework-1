@@ -1,6 +1,6 @@
 import java.util.Scanner;
 //exception class for invalid location
-class InvalidLocation extends Exception{
+/*class InvalidLocation extends Exception{
 	String str1;
 	InvalidLocation(String str2) {
 		str1=str2;
@@ -8,11 +8,10 @@ class InvalidLocation extends Exception{
    public String toString(){ 
 	return ("You can not go there!") ;
    }
-}
+}*/
 public class Main {
 	public static void main(String[] args) 
     { 
-		Character c = new Dining_Hall();
 		//Introductory message to the player
 		System.out.println("Messrs Moony, Wormtail, Padfoot and Prongs Purveyors of Aids to\n" + 
 				"magical Mischief-Makers are proud to present THE MARAUDER'S MAP\n" + 
