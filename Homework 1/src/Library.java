@@ -38,7 +38,7 @@ public class Library extends Location implements Behaviour, Character{
 	//Character functions	
 	public void talk(String p) {
 		if (p.contains("hermione")) {
-		System.out.println("Welcome to the library, its leviOsa not leviosA");}
+		System.out.println("Welcome to the library, here you can read many books and write all the notes you need for your classes and always remeber, its leviOsa not leviosA!");}
 		else
 			System.out.println("This person is not here!");
 	}
@@ -59,13 +59,9 @@ public class Library extends Location implements Behaviour, Character{
 			talk(test);
 			test = next_a();
 			}
-		else if(test.contains("read") || test.contains("hold")) {
+		else if(test.contains("read") || test.contains("hold") || test.contains("use")) {
 			hold(test);
 			test = next_a(); 
-			}
-		else if(test.contains("use")) {
-			hold(test);
-			test = next_a();
 			}
 		else if(test.contains("mischief managed")) {
 			end();

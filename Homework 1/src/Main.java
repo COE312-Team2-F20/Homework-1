@@ -53,12 +53,17 @@ public class Main {
 	    Library student_l = new Library();
 	    location = begin(student_l,location);
 	    }
-	    else
-	   {
+	    else 
+	   {	//if the player chooses to go to an illegal location
+	    	if(location.contains("walk"));{
 	    	System.out.println("You can not go there!");
 	    	location = next_loc();
+	    	}{
+    		//if the player inputs an invalid command that does not begin with walk
+    		System.out.println("That is not a valid command!");
+	    	location = next_loc();
+	    	}	
 	    }
-	    	//the player has entered an invalid location
 	    	/*throw new InvalidLocation("You can not go there!");
 		}catch(InvalidLocation exp){
 			System.out.println(exp) ;
@@ -82,6 +87,7 @@ public class Main {
     	//return the updated location
     	return loc;
 	}
+	//function to take the player to the location they choose
 	public static String begin(Location l,String location) {
 		@SuppressWarnings("resource")
 		Scanner s = new Scanner(System.in); 

@@ -37,15 +37,15 @@ public class Potions extends Location implements Behaviour, Character{
 	//Character function	
 	public void talk(String p) {
 		if (p.contains("snape")) {
-		System.out.println("Welcome to the Potions classroom, My name is Professor Snape and I don't tolerate laziness in my classroom.");
+		System.out.println("Welcome to the Potions classroom, My name is Professor Snape and I can teach you how to bottle fame, brew glory, even put a stopper on death.");
 	}
 		else
 			System.out.println("This person is not here!");
-	}
-	
+	}	
+	//overwriting the abstract activity function
 	public void activity(String test) {
-	
-		test = test.toLowerCase();
+	//converting all string to lowercase
+	test = test.toLowerCase();
 	while(test != null) {
 		//try {
 		if(test.contains("walk") || test.contains("leave")) {
@@ -62,12 +62,8 @@ public class Potions extends Location implements Behaviour, Character{
 			}
 		else if(test.contains("use") || test.contains("hold")) {
 			hold(test);
-			test = next_a(); 
-			}
-		else if(test.contains("drink") || test.contains("eat")) {
-			hold(test);
 			test = next_a();
-		}
+			}
 		else if(test.contains("mischief managed")) {
 			end();
 		}

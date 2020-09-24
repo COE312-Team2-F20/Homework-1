@@ -42,8 +42,9 @@ public class Dining_Hall extends Location implements Behaviour, Character {
 		else
 			System.out.println("This person is not here!");
 	}
-	
+	//overwriting the activity function
 	public void activity(String test) {
+		//changing all input to lowercase 
 		test = test.toLowerCase();
 	while(test != null) {
 		//try {
