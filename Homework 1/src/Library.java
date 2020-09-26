@@ -2,17 +2,7 @@
 
 import java.util.Random;
 import java.util.Scanner;
-/*
-class MyException_L extends Exception{
-		String str1;
-		MyException_L(String str2) {
-			str1=str2;
-		   }
-	  public String toString(){ 
-		return ("That is not a valid command!") ;
-	   }
-	}
-	*/
+
 public class Library extends Location implements Behaviour, Character{
 	public Library()
 	{super.room = "Library";}
@@ -71,11 +61,7 @@ public class Library extends Location implements Behaviour, Character{
 			System.out.println("That is not a valid command");
 			test = next_a();
 		}
-			/*throw new MyException_L("That is not a valid command");
-		}catch(MyException_L exp){
-			System.out.println(exp) ;
-			test = next_a();				
-			}*/
+			
 	}
 }
 }

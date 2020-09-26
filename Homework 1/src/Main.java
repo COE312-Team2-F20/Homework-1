@@ -1,14 +1,4 @@
 import java.util.Scanner;
-//exception class for invalid location
-/*class InvalidLocation extends Exception{
-	String str1;
-	InvalidLocation(String str2) {
-		str1=str2;
-	   }
-   public String toString(){ 
-	return ("You can not go there!") ;
-   }
-}*/
 public class Main {
 	public static void main(String[] args) 
     { 
@@ -36,7 +26,6 @@ public class Main {
 	    String location = s.nextLine(); 
 	    location = location.toLowerCase();
 	    while(!location.contains("mischief managed")) {
-	    	//try {
 	    //the player chooses to go to the dining hall
 	    if (location.contains("walk north")){
 	    	Dining_Hall student = new Dining_Hall();
@@ -55,21 +44,16 @@ public class Main {
 	    }
 	    else 
 	   {	//if the player chooses to go to an illegal location
-	    	if(location.contains("walk"));{
+	    	if(location.contains("walk")){
 	    	System.out.println("You can not go there!");
 	    	location = next_loc();
 	    	}{
     		//if the player inputs an invalid command that does not begin with walk
-    		System.out.println("That is not a valid command!");
+	    	if(!location.contains("walk"))
+	    	System.out.println("That is not a valid command!");
 	    	location = next_loc();
 	    	}	
 	    }
-	    	/*throw new InvalidLocation("You can not go there!");
-		}catch(InvalidLocation exp){
-			System.out.println(exp) ;
-			location = next_loc();				
-			}	
-	    }*/
 	    //if the player chooses to input mischief managed the loop has ended and the game is over
 	    }
 	    System.out.println("Hiding map contents...end.");

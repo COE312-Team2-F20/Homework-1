@@ -1,15 +1,6 @@
 import java.util.Random;
 import java.util.Scanner;
-/*class MyException_P extends Exception{
-		String str1;
-		MyException_P(String str2) {
-			str1=str2;
-		   }
-	   public String toString(){ 
-		return ("That is not a valid command!") ;
-	   }
-	}
-	*/
+
 public class Potions extends Location implements Behaviour, Character{
 	public Potions()
 	{super.room = "Potions Classroom";}
@@ -60,7 +51,7 @@ public class Potions extends Location implements Behaviour, Character{
 			talk(test);
 			test = next_a();
 			}
-		else if(test.contains("use") || test.contains("hold")) {
+		else if(test.contains("use") || test.contains("hold") || test.contains("drink")) {
 			hold(test);
 			test = next_a();
 			}
@@ -73,10 +64,6 @@ public class Potions extends Location implements Behaviour, Character{
 			test = next_a();
 		}
 		}
-		/*	throw new MyException_P("That is not a valid command");
-		}catch(MyException_P exp){
-			System.out.println(exp) ;
-			test = next_a();				
-			}*/
+		
 	}
 }

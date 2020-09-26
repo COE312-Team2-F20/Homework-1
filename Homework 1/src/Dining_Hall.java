@@ -1,15 +1,7 @@
 
 import java.util.Random;
 import java.util.Scanner;
-/*class MyException_d extends Exception{
-	String str1;
-	MyException_d(String str2) {
-		str1=str2;
-	   }
-   public String toString(){ 
-	return ("That is not a valid command!") ;
-   }
-}*/
+
 public class Dining_Hall extends Location implements Behaviour, Character {
 	//default constructor
 	public Dining_Hall()
@@ -47,7 +39,6 @@ public class Dining_Hall extends Location implements Behaviour, Character {
 		//changing all input to lowercase 
 		test = test.toLowerCase();
 	while(test != null) {
-		//try {
 		if(test.contains("walk") || test.contains("leave")) {
 			walk();
 			break;
@@ -60,7 +51,7 @@ public class Dining_Hall extends Location implements Behaviour, Character {
 			talk(test);
 			test = next_a();
 			}
-		else if(test.contains("hold") || test.contains("use")) {
+		else if(test.contains("hold") || test.contains("use") || test.contains("eat")) {
 			hold(test);
 			test = next_a();
 			}
@@ -69,12 +60,7 @@ public class Dining_Hall extends Location implements Behaviour, Character {
 		}
 		else
 			{System.out.println("That is not a valid command");
-			test = next_a();}
-			//throw new MyException_d("That is not a valid command");
-		//}catch(MyException_d exp){
-		//	System.out.println(exp) ;
-		//	test = next_a();				
-			//}		
+			test = next_a();}	
 	}
 	}
 }
