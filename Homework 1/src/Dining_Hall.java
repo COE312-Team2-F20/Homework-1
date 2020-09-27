@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Dining_Hall extends Location implements Behaviour, Character {
 	//default constructor
 	public Dining_Hall()
-	{super.room = "Dining Hall";}
+	{super("Dining Hall");}
 	Scanner input = new Scanner(System.in);
 	//Location functions
 	@Override

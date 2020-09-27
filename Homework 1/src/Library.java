@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Library extends Location implements Behaviour, Character{
 	public Library()
-	{super.room = "Library";}
+	{super("Library");}
 	Scanner input = new Scanner(System.in);
 	//Location functions
 	public void look(){ System.out.println("Once the academic year starts, students spend a lot of their time in the school library. Amongst those students that you can talk to is Hermione.\nIn the library, you find a book you can read, and a quill you can write with.");}

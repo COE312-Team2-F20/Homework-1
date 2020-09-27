@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Potions extends Location implements Behaviour, Character{
 	public Potions()
-	{super.room = "Potions Classroom";}
+	{super("Potions Classroom");}
 	Scanner input = new Scanner(System.in);
 	//Location functions
 	@Override
