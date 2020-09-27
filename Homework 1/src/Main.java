@@ -49,9 +49,10 @@ public class Main {
 	    	location = next_loc();
 	    	}{
     		//if the player inputs an invalid command that does not begin with walk
-	    	if(!location.contains("walk"))
+	    	if(!location.contains("walk")) {
 	    	System.out.println("That is not a valid command!");
 	    	location = next_loc();
+	    	}
 	    	}	
 	    }
 	    //if the player chooses to input mischief managed the loop has ended and the game is over
